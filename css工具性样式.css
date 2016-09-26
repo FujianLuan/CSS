@@ -1,0 +1,30 @@
+﻿/*全局公用样式,包括调试样式,浏览器样式重置*/
+/*元素隐藏样式
+*  HTML属性hidden隐藏
+* css属性隐藏 display,visibility,opacity,overflow,clip(clip-path),transform,position
+*
+*
+*
+*
+*
+*/
+.ho{/*透明性隐藏,占据空间影响布局,响应交互*/
+	opacity:0;
+}
+.hv{/*可见性隐藏，占据空间影响布局,无交互性,动画性*/
+	visibility:none;
+}
+.hd{/*显示(渲染性)性隐藏，不占据空间,无交互性*/
+	display:none;
+}
+.hp{/**/
+	position: absolute;
+   	top: -9999px;
+   	left: -9999px;
+}
+.s{/*show*/
+	display:block;
+}
+
+
+
