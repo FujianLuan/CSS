@@ -1,23 +1,32 @@
-﻿/*全局公用样式,包括调试样式,浏览器样式重置*/
-/*元素隐藏样式
-*  HTML属性hidden隐藏
-* css属性隐藏 display,visibility,opacity,overflow,clip(clip-path),transform,position
-*
-*
-*
-*
-*
-*/
-.ho{/*透明性隐藏,占据空间影响布局,响应交互*/
+/*==========================全局公用样式、工具性样式============================*/
+/********************显隐类*******************/
+.ho-i{/*透明性隐藏*/
+	opacity:0!important;
+}
+.hv-i{/*可见性隐藏*/
+	visibility:none!important;
+}
+.h-i,.hd-i{/*显示(渲染性)性隐藏*/
+	display:none!important;
+}
+.hp-i{/*位置偏移*/
+	position: absolute!important;
+   	top: -9999px!important;
+   	left: -9999px!important;
+}
+.s-i{/*show*/
+	display:block!important;
+}
+.ho{/*透明性隐藏*/
 	opacity:0;
 }
-.hv{/*可见性隐藏，占据空间影响布局,无交互性,动画性*/
+.hv{/*可见性隐藏*/
 	visibility:none;
 }
-.hd{/*显示(渲染性)性隐藏，不占据空间,无交互性*/
+.h,.hd{/*显示(渲染性)性隐藏*/
 	display:none;
 }
-.hp{/**/
+.hp{/*位置偏移*/
 	position: absolute;
    	top: -9999px;
    	left: -9999px;
@@ -25,6 +34,76 @@
 .s{/*show*/
 	display:block;
 }
-
+/********************排版类*******************/
+.fwbold{
+	font-weight: bold;
+}
+.fwbolder{
+	font-weight: bolder;
+}
+.text-ellipsis{
+	/*width: 100px; 宽度需要设置,ellipsis才生效*/
+	overflow: hidden; 
+	white-space: nowrap; 
+	text-overflow: ellipsis;
+}
+/********************边框类*******************/
+.b-r{
+	border:1px solid red;
+}
+.b-2r{
+	border:2px solid red;
+}
+.b-g{
+	border:1px solid green;
+}
+.b-2g{
+	border:2px solid green;
+}
+.b-b{
+	border:1px solid blue;
+}
+.b-2b{
+	border:2px solid blue;
+}
+/********************背景类*******************/
+.bk-r{
+	background:red;
+}
+.bk-g{
+	background:green;
+}
+.bk-b{
+	background:blue;
+}
+/*********************布局类*****************/
+.pull-right{
+	float:right;
+}
+.pull-left{
+	float:left;
+}
+.clr:after{
+	content: "";
+	display: block;
+	clear: both;
+}
+.clr{
+	*zoom:1;/*for IE ，active the 'hasLayout'*/
+}
+/*********************样式重置类*****************/
+input{
+	border:1px solid #eee;
+}
+textarea{
+	border:1px solid #eee;
+}
+a{
+	cursor:pointer;
+	text-decoration:none;
+	outline:none;/*IE7以下不识别，需手动在a标签中添加'hidefocus="true"',使用js插件hide-a-outline.js*/
+	color:inherit;/*去除浏览器默认颜色*/
+	font-size: inherit;
+}
 
 
