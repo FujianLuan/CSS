@@ -1,0 +1,1 @@
+﻿将四种格式的字体(eot,woff,ttf,svg)与fontcustom.css放在同一文件夹下，并重命名为font.ttf etc. 即可应用。PS.将来什么时候浏览器才能互相兼容一种字体Σヽ(ﾟД ﾟ; )ﾉ。
