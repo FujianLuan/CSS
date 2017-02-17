@@ -1,0 +1,299 @@
+/*==========================全局公用样式、工具性样式============================*/
+/********************显隐类*******************/
+.ho-i{/*透明性隐藏*/
+	opacity:0!important;
+}
+.hv-i{/*可见性隐藏*/
+	visibility:none!important;
+}
+.h-i,.hd-i{/*显示(渲染性)性隐藏*/
+	display:none!important;
+}
+.hp-i{/*位置偏移*/
+	position: absolute!important;
+   	top: -9999px!important;
+   	left: -9999px!important;
+}
+.s-i{/*show*/
+	display:block!important;
+}
+.ho{/*透明性隐藏*/
+	opacity:0;
+}
+.hv{/*可见性隐藏*/
+	visibility:none;
+}
+.h,.hd{/*显示(渲染性)性隐藏*/
+	display:none;
+}
+.hp{/*位置偏移*/
+	position: absolute;
+   	top: -9999px;
+   	left: -9999px;
+}
+.s{/*show*/
+	display:block;
+}
+/********************排版类*******************/
+.fwbold{
+	font-weight: bold;
+}
+.fwbolder{
+	font-weight: bolder;
+}
+.text-ellipsis{
+	/*width: 100px; 宽度需要设置,ellipsis才生效*/
+	overflow: hidden; 
+	white-space: nowrap; 
+	text-overflow: ellipsis;
+}
+/********************边框类*******************/
+.b-r{
+	border:1px solid red;
+}
+.b-2r{
+	border:2px solid red;
+}
+.b-g{
+	border:1px solid green;
+}
+.b-2g{
+	border:2px solid green;
+}
+.b-b{
+	border:1px solid blue;
+}
+.b-2b{
+	border:2px solid blue;
+}
+/********************背景类*******************/
+.bk-r{
+	background:red;
+}
+.bk-g{
+	background:green;
+}
+.bk-b{
+	background:blue;
+}
+/*********************布局类*****************/
+.pull-right{
+	float:right;
+}
+.pull-left{
+	float:left;
+}
+.clr:after{
+	content: "";
+	display: block;
+	clear: both;
+}
+.clr{
+	*zoom:1;/*for IE ，active the 'hasLayout'*/
+}
+/*position: fixed的缩写，原子类*/
+
+.pf {
+    position: fixed;
+    /*chrome 内核 浏览器 position: fixed 防止抖动*/
+    -webkit-transform: translateZ(0);
+}
+
+
+/*利用绝对定位宽高拉升原理，中心居中元素，原子类*/
+
+.middle {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+}
+
+
+/*利用相对定位于`CSS3`使元素垂直居中，原子类*/
+
+.middle-v {
+    position: relative;
+    top: 50%;
+    -webkit-transform: -webkit-translateY(-50%);
+    -moz-transform: -moz-translateY(-50%);
+    -o-transform: -o-translateY(-50%);
+    transform: translateY(-50%);
+}
+
+
+/*元素计算宽高德盒子模型以`border`为外界限，原子类*/
+
+.bb {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+/*********************样式重置类*****************/
+/*
+ * 当`body`宽度大于`html`宽度时，某些浏览器会出现内部滚动条，所以给`html、body`设置宽度100%。
+ * 取消部分浏览器点击有阴影。
+ * 优化移动端滚动事件。
+ * 使字体渲染更顺滑。
+ */
+html,
+body {
+    width: 100%;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-overflow-scrolling: touch;
+    overflow-scrolling: touch;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+/**
+ * 移除常用标签的浏览器默认的`margin、padding`
+ * pre、code、legend、fieldset、blockquote……等其他标签不是很常用
+ */
+body,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+dl,
+dd,
+ul,
+ol,
+th,
+td,
+button,
+figure,
+input,
+textarea,
+form {
+    margin: 0;
+    padding: 0;
+}
+/*不同浏览器的input、select、textarea的盒子模型宽度计算方式不通，统一为最常见的content-box*/
+input,
+select,
+textarea {
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+}
+/**
+ * `table`相邻单元格的边框间的距离设置为0。
+ * 设置`table`的边框为合并模式。
+ */
+
+table {
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+/**
+ * 移除浏览器部分元素的默认边框。
+ * acronym、fieldset……等其他标签不是很常用，所以本css都不会一一列举出来，为了简化。如果项目中用到，可以自己单独写。
+ */
+img,
+input,
+button,
+textarea {
+    border: none;
+}
+/*让`textarea`默认不可以放缩*/
+textarea {
+    resize: none;
+}
+/**
+ * 因为部分浏览器默认的`q`标签的前后伪元素有多余样式，所以置空`q`标签前后伪元素。
+ * q标签不是很常见，如果开发者需要可以使用。
+/*
+q::before,
+q::after {
+    content: '';
+}
+*/
+/**
+ * 由于以下元素的部分属性没有继承父节点样式，所以声明这些元素的这些属性为父元素的属性。
+ * 取消这些元素的`outline`样式。
+ */
+a,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+input,
+select,
+button,
+option,
+textarea,
+optgroup {
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    font-style: inherit;
+    line-height: inherit;
+    color: inherit;
+    outline: none;
+}
+/*取消火狐浏览器部分版本`input`聚焦的时候默认的`padding、border`*/
+
+input::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+}
+
+
+/*取消部分浏览器`input[type='number']`的默认样式*/
+
+input[type='number'] {
+    -moz-appearance: textfield;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    margin: 0;
+    -webkit-appearance: none;
+}
+
+
+/*输入控件的`placeholder`颜色设置为`#999`（浅灰色）*/
+
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+    color: #999;
+}
+
+input:-moz-placeholder,
+textarea:-moz-placeholder {
+    color: #999;
+}
+
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+    color: #999;
+}
+
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+    color: #999;
+}
+
+
+/*由于部分浏览器`template`直接显示出来，所以要隐藏`template`元素*/
+
+template {
+    display: none;
+}
+a{
+	cursor:pointer;
+	text-decoration:none;
+	outline:none;/*IE7以下不识别，需手动在a标签中添加'hidefocus="true"',使用js插件hide-a-outline.js*/
+	color:inherit;/*去除浏览器默认颜色*/
+	font-size: inherit;
+}
+
+
