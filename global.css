@@ -208,6 +208,16 @@ input::-moz-placeholder,textarea::-moz-placeholder {
 input:-ms-input-placeholder,textarea:-ms-input-placeholder {
     color: #999;
 }
+/*解决手机端输入框获得焦点后页面放大，浏览器默认focus状态下字体大于等于16px时用户才看得清，所以在字体小于16时会放大页面*/
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 1024px) {
+	select:focus,
+	textarea:focus,
+	input:focus {
+		font-size: 16px !important;
+	}
+}
 template {/*由于部分浏览器template直接显示出来，所以要隐藏template元素*/
     display: none;
 }
